@@ -1,2 +1,2 @@
-# battle
-Makers Challenge Week 3
+# Battle
+Makers Challenge Week 3 - Create simple battle game
