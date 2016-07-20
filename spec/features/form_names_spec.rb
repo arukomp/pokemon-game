@@ -1,4 +1,4 @@
-feature "Name Input Form" do
+RSpec.feature "Name Input Form", :type => :feature do
   scenario "Users enter their names" do
     visit "/"
 
