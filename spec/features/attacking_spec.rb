@@ -11,6 +11,8 @@ feature "attacking players" do
   scenario "reducing health" do
     sign_in_and_play
     click_link "Attack"
+    click_link "OK"
+    expect(page).to_not have_content "player2 100"
     expect(page).to have_content "player2 90"
   end
 

@@ -1,21 +1,27 @@
 require 'player'
 
 describe Player do
-  let(:name){"Player_name"}
+  let(:player1){described_class.new("Player1_name")}
+  let(:player2){described_class.new("Player2_name")}
   subject { described_class.new(name) }
   it "returns it's name" do
-    expect(subject.name).to eq "Player_name"
+    expect(player1.name).to eq "Player1_name"
   end
 
   describe "hit points" do
     it "shows hit points" do
-      expect(subject.hp).to eq 100
+      expect(player1.hp).to eq described_class::INIT_HP
     end
   end
 
   describe "doing damage" do
+    it "damages chosen player" do
+      expect(player2).to receive :receive_damage
+      player1.attack(player2)
+    end
+
     it "deals damage to the player" do
-      expect{ subject.deal_damage }.to change{ subject.hp }.by -10
+      expect{ player2.receive_damage }.to change{ player2.hp }.by -described_class::ATTACK_HP
     end
   end
 end
