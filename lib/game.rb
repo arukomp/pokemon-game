@@ -10,4 +10,10 @@ class Game
     player.receive_damage
   end
 
+  def switch
+    role = @player1
+    @player1 = @player2
+    @player2 = role
+  end
+
 end

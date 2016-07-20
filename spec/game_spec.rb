@@ -21,4 +21,10 @@ describe Game do
       expect(game.player2).to eq player2
     end
   end
+
+  describe "#switch" do
+    it "swithces turns" do
+      expect{game.switch}.to change {game.player1}.to player2
+    end
+  end
 end

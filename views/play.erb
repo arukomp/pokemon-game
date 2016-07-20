@@ -1,4 +1,7 @@
 <h1> Players </h1>
 <%= @game.player1.name %> vs <%= @game.player2.name %><br><br>
+<form action="/switch" method="post" >
+<input type="submit" value="switch" >
+</form>
 <%= @game.player1.name %> <%= @game.player1.hp %> vs <%= @game.player2.name %> <%= @game.player2.hp %>
 <br><a href="/attack">Attack</a>
