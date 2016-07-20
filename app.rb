@@ -1,9 +1,15 @@
 require 'sinatra/base'
-require 'spec_helper'
+# require 'spec_helper'
 
 class Batle < Sinatra::Base
   get '/' do
-    'Hello Batle!'
+    erb :form
+  end
+
+  post '/form' do
+    @player1 = params[:player1]
+    @player2 = params[:player2]
+    erb :play
   end
 
   # start the server if ruby file executed directly
