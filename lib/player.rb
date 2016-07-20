@@ -8,9 +8,7 @@ class Player
     @hp = INIT_HP
   end
 
-  def attack player
-    player.receive_damage
-  end
+
 
   def receive_damage
     @hp -= ATTACK_HP

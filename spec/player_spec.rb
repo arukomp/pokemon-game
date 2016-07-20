@@ -15,11 +15,6 @@ describe Player do
   end
 
   describe "doing damage" do
-    it "damages chosen player" do
-      expect(player2).to receive :receive_damage
-      player1.attack(player2)
-    end
-
     it "deals damage to the player" do
       expect{ player2.receive_damage }.to change{ player2.hp }.by -described_class::ATTACK_HP
     end

@@ -1,6 +1,7 @@
 require 'sinatra/base'
 # require 'spec_helper'
 require_relative 'lib/player'
+require_relative 'lib/game'
 
 class Batle < Sinatra::Base
   enable :sessions
@@ -25,7 +26,7 @@ class Batle < Sinatra::Base
   get '/attack' do
     @player1 = $player1.name
     @player2 = $player2.name
-    $player1.attack($player2)
+    Game.new.attack($player2)
     erb :attack
   end
 
