@@ -8,4 +8,10 @@ feature "attacking players" do
     expect(page).to have_content "player1 attacked player2"
   end
 
+  scenario "reducing health" do
+    sign_in_and_play
+    click_link "Attack"
+    expect(page).to have_content "player2 90"
+  end
+
 end
