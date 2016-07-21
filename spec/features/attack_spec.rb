@@ -12,12 +12,4 @@ RSpec.feature "Attack player", :type => :feature do
     expect(page).to have_content("Nomi reduced Julie's HP to 50")
   end
 
-  scenario 'attacking after switching players' do
-    sign_in_and_play
-    click_button('Attack')
-    click_button('Switch turns')
-    click_button('Attack')
-    expect(page).to have_content('Julie attacked Nomi')
-  end
-
 end
