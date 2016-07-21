@@ -2,5 +2,9 @@
 
 
 
-  <%= @game.player_1.name %> attacked <%= @game.player_2.name %>
-  <%= @game.player_1.name %> reduced <%= @game.player_2.name %>'s HP to <%= @game.player_2.hit_points %>
+<h3>  <%= @game.player_1.name %> attacked <%= @game.player_2.name %> </h3>
+<h3>  <%= @game.player_1.name %> reduced <%= @game.player_2.name %>'s HP to <%= @game.player_2.hit_points %> </h3>
+
+<form action="/play">
+  <input type="submit" value="Switch turns">
+</formn>

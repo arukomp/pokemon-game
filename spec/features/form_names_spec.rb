@@ -4,4 +4,5 @@ RSpec.feature "Name Input Form", :type => :feature do
 
     expect(page).to have_content "Nomi vs. Julie"
   end
+
 end
