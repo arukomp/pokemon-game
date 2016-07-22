@@ -10,6 +10,14 @@ class Game
     @current_turn = player_1
   end
 
+  def self.create(player_1, player_2)
+    @game_storage = Game.new(player_1, player_2)
+  end
+
+  def self.instance
+    @game_storage
+  end
+
   def player_1
     players.first
   end
