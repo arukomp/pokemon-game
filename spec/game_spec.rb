@@ -2,10 +2,27 @@ require 'game'
 
 describe Game do
 
-  let(:player_1)    { double :player_1 }
-  let(:player_2)     { double :player_2 }
-  #let(:current_turn) { double :current_turn }
   subject(:game) { described_class.new(player_1, player_2) }
+  subject(:finished_game) { described_class.new(dead_player, player_2) }
+  let(:player_1) { double :player_1, hit_points: 60 }
+  let(:player_2) { double :player_2, hit_points: 60 }
+  let(:dead_player) { double :player, hit_points: 0 }
+
+  describe "#game_over?" do
+    it "returns false if no one is at 0 HP" do
+      expect(game.game_over?).to be false
+    end
+
+    it "returns true if at least one player is at 0 HP" do
+      expect(finished_game.game_over?).to eq true
+    end
+  end
+
+  describe "#loser" do
+    it "returns a player one less than 0 HP" do
+      expect(finished_game.loser).to eq dead_player
+    end
+  end
 
   describe '#player_1' do
     it 'retrieves player one' do
